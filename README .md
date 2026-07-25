@@ -118,8 +118,12 @@ The Random Forest model achieved the best performance among the tested models an
 
 ## 👨‍💻 Author
 
-**Dileep A**
+**Dileep Atluri**
 
-GitHub: https://github.com/YOUR_USERNAME
+GitHub: https://github.com/dileepatluri/Earthquake-Damage-Prediction
 
-LinkedIn: https://www.linkedin.com/in/YOUR_LINKEDIN
+LinkedIn: https://www.linkedin.com/in/dileep-atluri-bab60932a/
+
+## 🚀 Live Demo
+
+🔗 **Live App:** https://earthquake-damage-prediction-dxjyuinrxfbd263wnxmgsn.streamlit.app/
