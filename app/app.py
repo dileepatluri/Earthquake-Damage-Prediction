@@ -4,7 +4,7 @@ import numpy as np
 import pandas as pd
 import streamlit as st
 
-MODEL_DIR = os.path.join(os.path.dirname(__file__), "model")
+MODEL_DIR = os.path.join(os.path.dirname(__file__),"..", "model")
 
 
 @st.cache_resource
