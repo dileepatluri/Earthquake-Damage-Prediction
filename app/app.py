@@ -30,10 +30,25 @@ def build_input_form(feature_columns, feature_types, encoders):
                 options = list(encoders[col_name].classes_)
                 values[col_name] = st.selectbox(col_name, options, key=col_name)
             else:
-                # Generic numeric input — adjust min/max/step per column if you
-                # know the real ranges from your dataset.
+                # Realistic default/range per column (from the training data),
+                # instead of a blind 0.0 default. Without this, geo_level_*, age,
+                # area_percentage and height_percentage — which together drive
+                # ~68% of the model's decision — always got fed as 0, so the
+                # prediction barely moved no matter what other fields were changed.
+                numeric_defaults = {
+                    "geo_level_1_id": (0, 30, 10),
+                    "geo_level_2_id": (0, 1427, 500),
+                    "geo_level_3_id": (0, 12567, 5000),
+                    "count_floors_pre_eq": (1, 9, 2),
+                    "age": (0, 995, 20),
+                    "area_percentage": (1, 100, 8),
+                    "height_percentage": (1, 32, 5),
+                    "count_families": (0, 10, 1),
+                }
+                lo, hi, default = numeric_defaults.get(col_name, (0, 100, 0))
                 values[col_name] = st.number_input(
-                    col_name, value=0.0, step=1.0, key=col_name
+                    col_name, min_value=lo, max_value=hi, value=default,
+                    step=1, key=col_name
                 )
     return values
 
