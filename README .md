@@ -126,4 +126,4 @@ LinkedIn: https://www.linkedin.com/in/dileep-atluri-bab60932a/
 
 ## 🚀 Live Demo
 
-🔗 **Live App:** https://earthquake-damage-prediction-dxjyuinrxfbd263wnxmgsn.streamlit.app/
+🔗 **Live App:** https://earthquake-damage-prediction-ebwesyfp3mgf8zq2wmldsf.streamlit.app/
